@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{%static 'index.css' %}">
+</head>
+<body>
+        {% if user.is_authenticated %}
+        <div class="logout"><a href="logout">Logout</a></div>
+        <div class="wrapper">
+            <h1>Welcome {{user.username}}!</h1>
+            <form action="strat" method="POST">
+                {%csrf_token%}
+                <button class="btn">Strategise</button>
+            </form>
+        </div>
+        {%else%}
+        <div class="wrapper">
+            <h1>A Trade for All</h1>
+            <div class="btn"><a href="login">Login or Signup</a></div>
+        </div>
+        {%endif%}
+    
+    <div class="nifty">
+        <h1>NIFTY</h1>
+        <p>25,000</p>
+    </div>
+    
+    <div class="banknifty">
+        <h1>BANKNIFTY</h1>
+        <p>50,000</p>
+    </div>
+    
+    <div class="finnifty">
+        <h1>FINNIFTY</h1>
+        <p>21,000</p>
+    </div>
+</body>
+</html>

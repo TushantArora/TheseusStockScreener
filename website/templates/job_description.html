@@ -1,0 +1,130 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description</title>
+    <link rel="stylesheet" href="job.css">
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="job" method="POST">
+            {%csrf_token%}
+            <h1 class="header" id="HEADER" name="header"> Job description</h1>
+            <p class="question">Function</p>
+            <input type="text" name="function" placeholder="Marketing, Sales or Finance">
+            <p class="question">Technical Skills</p>
+            <select name="tech_skills" id="TECH_SKILLS" multiple>
+                <option value="1">Content creation</option>
+                <option value="2"> Campaign management</option>
+                <option value="3">Design</option>
+                <option value="4">Content management systems</option>
+                <option value="5">User experience design</option>
+                <option value="6">Search Engine Optimization (SEO)</option>
+                <option value="7">Search Engine Marketing (SEM)</option>
+                <option value="8">CRM and marketing automation</option>
+                <option value="9">Writing/ Creative writing</option>
+                <option value="10">Digital marketing</option>
+                <option value="11">Social media marketing</option>
+                <option value="12">Market research</option>
+                <option value="13">Budgeting</option>
+                <option value="14">Data analysis</option>
+                <option value="15">Analytics</option>
+                <option value="16">Data visualization</option>
+            </select>
+            <p class="question">Years of Experience</p>
+            <select name="exp" id="exp">
+                <option value="1">0-2 years</option>
+                <option value="2">2-5 years</option>
+                <option value="3">5-8 years</option>
+                <option value="4">8-12 years/option>
+                <option value="5">12 years and above</option>
+            </select>
+            <p class="question">Soft skills/ Competencies</p>
+            <select name="soft_skills" id="SOFT_SKILLS" multiple>
+                <option value="1">Communication</option>
+                <option value="2">Creativity</option>
+                <option value="3">Leadership</option>
+                <option value="4">Organization skills</option>
+                <option value="5">Strategy</option>
+                <option value="6">Stakeholder management</option>
+                <option value="7">Problem solving</option>
+                <option value="8">Crtical thinking</option>
+            </select>
+            <p class="questions">Industry preference/ past experience</p>
+            <select name="industry" id="INDUSTRY">
+                <option value="1">Automobile/Transportation</option>
+                <option value="2">Telecommunications</option>
+                <option value="3">Information Technology</option>
+                <option value="4">Manufacturing</option>
+                <option value="5">Mining</option>
+            </select>
+            <p class="question">Annual Turnover of your company</p>
+            <select name="turnover" id="TURNOVER">
+                <option value="1">100 to 500 crore rupees</option>
+                <option value="2">500 to 5000 crore rupees</option>
+                <option value="3">5000 to 10000 crore rupees</option>
+            </select>
+            <p class="question">Level</p>
+            <select name="level" id="LEVEL">
+                <option value="1">Level 1 - Analyst</option>
+                <option value="2">Level 2 - Team Lead</option>
+                <option value="3">Level 3 - Senior team lead/ Associate Manager</option>
+                <option value="4">Level 4 - Manager</option>
+                <option value="5">Level 5 - Senior Manager</option>
+                <option value="6">Level 6 - Associate Director</option>
+                <option value="7">Level 7 - Director</option>
+            </select>
+            <p class="question">IC or People Manager</p>
+            <select name="ic" id="IC">
+                <option value="1">Individual Contributor role</option>
+                <option value="2">People Manager role with 3-5 reportees</option>
+                <option value="3">People Manager role with 5-10 reportees</option>
+                <option value="4">People Manager role with 10+ reportees</option>
+            </select>
+            <p class="question">Location</p>
+            <select name="location" id="LOCATION">
+                <option value="1">Hyderabad</option>
+                <option value="2">Delhi</option>
+                <option value="3">Mumbai</option>
+                <option value="4">Pune</option>
+                <option value="5">Goa</option>
+            </select>
+            <p class="questions">Compensation</p>
+            <select name="comp" id="COMP">
+                <option value="1">3 lac to 5 lac rupees</option>
+                <option value="2">5 lac to 8 lac rupees</option>
+                <option value="3">8 lac to 12 lac rupees</option>
+                <option value="4">12 lac to 15 lac rupees</option>
+                <option value="5">15 lac to 20 lac rupees</option>
+                <option value="6">20 lac to 25 lac rupees</option>
+            </select>
+        </form>
+    </div>
+    <script>
+        // new MultiSelectTag('TECH_SKILL')  // id
+        new MultiSelectTag('TECH_SKILLS', {
+            rounded: true,    // default true
+            shadow: true,      // default false
+            placeholder: 'Search',  // default Search...
+            tagColor: {
+            textColor: '#1245c8',
+            borderColor: '#92e681',
+            bgColor: '#eaffe6',
+        }
+        })
+        new MultiSelectTag('SOFT_SKILLS', {
+            rounded: true,    // default true
+            shadow: true,      // default false
+            placeholder: 'Search',  // default Search...
+            tagColor: {
+            textColor: '#1245c8',
+            borderColor: '#92e681',
+            bgColor: '#eaffe6',
+        }
+        })
+    </script>
+</body>
+</html>

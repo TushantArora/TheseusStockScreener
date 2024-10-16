@@ -1,0 +1,49 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'recc.css' %}">
+    <script src="{% static 'style.js' %}"></script>
+    <title>Strat</title>
+</head>
+<body>
+    <div class="logout"><a href="logout">Logout</a></div>
+    <div class="wrapper">
+        <form action="recc" class="input_box" method="POST">
+            {%csrf_token%}
+            <select name="index" id="INDEX">
+                <option value="0">--select--</option>
+                <option value="1">NIFTY</option>
+                <option value="2">BANKNIFTY</option>
+                <option value="3">FINNIFTY</option>
+            </select>
+            <p>OR</p>
+            <input type="text" name="single" placeholder="Enter stock symbol">
+            <h1>Time Interval</h1>
+            <select class="time" name="timeInt" id="timeInt">
+                <option value="0">1 Minute</option>
+                <option value="1">5 Minutes</option>
+                <option value="2" selected>15 Minutes</option>
+                <option value="3">30 Minutes</option>
+                <option value="4">1 Hour</option>
+                <option value="5">2 Hours</option>
+                <option value="6">4 Hours</option>
+                <option value="7">1 Day</option>
+                <option value="8">1 Week</option>
+                <option value="9">1 Month</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="loadContainer"></div>
+    </div>
+
+    <div class="recWrapper">
+        <p>Unlock smarter investing with our AI model</p>
+
+        <h1>Analyzing 26 indicators to deliver precision in stock recommendations. </h1> <br>
+        <h1>Your personalized financial strategist, powered by advanced algorithms.</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- {%load static%} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Sign Up</h1>
+
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {%endfor%}
+        <form action="register" class="signup_form" method="POST">
+            {%csrf_token%}
+            <input type="text" name="uname" id="UNAME" class="input_box" placeholder="Username" required/> <br>
+            <input type="email" name="uemail" id="UEMAIL" class="input_box" placeholder="Email" required/> <br>
+            <input type="password" name="upass" id="UPASS" class="input_box" placeholder="Password" required/> <br>
+            <input type="password" name="upass1" id="UPASS1" class="input_box" placeholder="Enter password again" required/> <br>
+            <button type="submit">Register</button>
+            <p class="already">Already Have an Account? <a href="login">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="login" class="form_login" id="FORM_LOGIN" method="POST">
+            {% csrf_token %}
+            <h1>Login</h1>
+            {% for message in messages%}
+            <h5>{{message}}</h5>
+            {%endfor%}
+            <div class="user_input" id="UNAME">
+                <input type="text" name="uemail" placeholder="Username" required>
+            </div>
+            <div class="user_input" id="PASS">
+                <input type="password" name="upass" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn" id="BTN">
+                Start Trading
+            </button>
+            <!-- <p class="already">Don't have an account?<a href="register">Register</a></p> -->
+        </form>
+    </div>
+</body>
+</html>
